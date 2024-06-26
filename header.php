@@ -35,6 +35,20 @@
 
 <body <?php body_class(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
+
+<?php
+// Banner Arriba del Header
+echo '<div class="banner-top-header-widgets">';
+if ( is_active_sidebar( 'banner-top-header-1' ) ) {
+    dynamic_sidebar( 'banner-top-header-1' );
+}
+if ( is_active_sidebar( 'banner-top-header-2' ) ) {
+    dynamic_sidebar( 'banner-top-header-2' );
+}
+echo '</div>';
+?>
+
+
 <?php
 	/**
 	 * kids_education_page_start_action hook
@@ -51,6 +65,17 @@
 	 *
 	 */
 	do_action( 'kids_education_header_action' );
+	
+	// Banner Abajo del Header
+	echo '<div class="banner-bottom-header-widgets">';
+	if ( is_active_sidebar( 'banner-bottom-header-1' ) ) {
+		dynamic_sidebar( 'banner-bottom-header-1' );
+	}
+	if ( is_active_sidebar( 'banner-bottom-header-2' ) ) {
+		dynamic_sidebar( 'banner-bottom-header-2' );
+	}
+	echo '</div>';
+
 
 	/**
 	 * kids_education_content_start_action hook

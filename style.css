@@ -700,7 +700,7 @@ a:focus {
     left: 0;
     right: 0;
     z-index: 3000;
-    background-image: url(assets/uploads/header-bg.png);
+    background-image: url(assets/uploads/header-bg-blue.png);
     background-size: cover;
     background-position: 50% 100%;
     -webkit-transition: all 0.3s ease-in-out;
@@ -736,7 +736,7 @@ a:focus {
 }
 .left-menu,
 .right-menu  {
-	width: 36%;
+	width: 60%;
 }
 .site-branding {
     width: 40%;
@@ -746,8 +746,8 @@ a:focus {
     padding: 0 0 35px 0;
     text-align: center;
     position: relative;
-    top: 30px;
-    min-height: 155px;
+    top: 0px;
+    min-height: 200px;
 }
 .is-sticky .site-branding {
 	min-height: 80px;
@@ -899,11 +899,11 @@ a:focus {
     transition: all 0.9s ease-in-out;
 }
 .site-logo {
-    width: 200px;
+    width: 12em;
     margin: 0 auto;
 }
 .is-sticky .site-logo {
-    width: 100px;
+    width: 12em;
 }
 .is-sticky .site-branding {
     padding: 0 0 65px 0;
@@ -5537,7 +5537,7 @@ body.error404 .footer-divider {
         padding: 0 0 35px 0;
         text-align: center;
         position: relative;
-        top: 30px;
+        top: 0px;
         min-height: 155px;
     }
 	article .entry-header, 
@@ -5934,4 +5934,56 @@ body.error404 .footer-divider {
 	.portfolio-item {
 	    width: 100% !important;
 	}
+}
+
+/* Daniel's custom CSS */
+/* Estilo por defecto para móviles: banners uno encima del otro */
+.banner-top-header-widgets, .banner-bottom-header-widgets {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+    
+}
+
+/* Estilo para escritorio: banners uno al lado del otro */
+@media (min-width: 768px) { /* Ajusta este valor según tus necesidades */
+    .banner-top-header-widgets > *, .banner-bottom-header-widgets > * {
+        flex: 0 1 50%; /* Hace que cada elemento hijo ocupe el 50% del ancho */
+        box-sizing: border-box; /* Asegura que el padding y border estén incluidos en el ancho */
+    }
+    .banner-top-header-widgets img, .banner-bottom-header-widgets img {
+        width: 100%; /* Fuerza a las imágenes a ocupar el 100% del ancho de su contenedor */
+        height: auto; /* Mantiene la proporción de las imágenes */
+    }
+    .banner-top-header-widgets, .banner-bottom-header-widgets {
+        flex-direction: row;
+        
+    }
+
+
+
+    .banner-top-header-widgets {
+        display:flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.wp-block-image {
+    margin: 0!important;
+    margin-bottom: -7px!important;
+}
+
+.banner-top-header-widgets, .banner-bottom-header-widgets {
+    position: -webkit-sticky; /* Para compatibilidad con Safari */
+    position: sticky;
+    top: 0; /* Ajusta este valor según sea necesario */
+    z-index: 1000; /* Asegura que los banners se mantengan por encima de otros elementos */
+}
+
+.banner-top-header-widgets > .widget {
+    margin: 0!important;
 }
