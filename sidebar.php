@@ -17,7 +17,7 @@ if ( is_archive() && class_exists( 'TP_Education' ) && is_tp_education() ) {
 	return false;
 }
 ?>
-
+<!--
 <aside id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+	<?php //dynamic_sidebar( 'sidebar-1' ); ?>
+</aside>-->

@@ -25,8 +25,9 @@ if ( true === apply_filters( 'kids_education_filter_frontpage_content_enable', t
 	do_action( 'kids_education_page_section' ); 
 ?>
 	<div id="primary" class="content-area">
+		
 		<main id="main" class="site-main" role="main">
-
+			
 			<?php
 			while ( have_posts() ) : the_post();
 

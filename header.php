@@ -65,16 +65,6 @@ echo '</div>';
 	 *
 	 */
 	do_action( 'kids_education_header_action' );
-	
-	// Banner Abajo del Header
-	echo '<div class="banner-bottom-header-widgets">';
-	if ( is_active_sidebar( 'banner-bottom-header-1' ) ) {
-		dynamic_sidebar( 'banner-bottom-header-1' );
-	}
-	if ( is_active_sidebar( 'banner-bottom-header-2' ) ) {
-		dynamic_sidebar( 'banner-bottom-header-2' );
-	}
-	echo '</div>';
 
 
 	/**

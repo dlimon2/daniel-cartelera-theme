@@ -51,6 +51,7 @@ if( !function_exists( 'kids_education_render_banner_section' ) ) :
 			 *
 			 */
 			$header_image = get_header_image();
+			//$header_image = kids_education_get_thumbnail_image();
 
 			$banner_image_class = ( '' != $header_image ) ? 'has-banner-image' : 'no-banner-image';
 		}

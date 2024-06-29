@@ -700,14 +700,15 @@ a:focus {
     left: 0;
     right: 0;
     z-index: 3000;
-    background-image: url(assets/uploads/header-bg-blue.png);
+    background: #2f5fff!important;
+    /*background-image: url(assets/uploads/header-bg-blue.png);
     background-size: cover;
     background-position: 50% 100%;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;*/
 }
 #masthead.fixed-header.is-sticky {
     position: fixed;
@@ -886,7 +887,7 @@ a:focus {
    top: 10px;
 }
 .main-navigation > ul > li.fa a {
-   font-family: 'Titillium Web', sans-serif;
+   font-family: 'Fredoka One', sans-serif;
 }
 .is-sticky .main-navigation > ul > li {
     padding: 45px 20px 0;
@@ -926,8 +927,10 @@ body.boxed .main-navigation > ul > li > a {
     padding: 30px 20px;
 }
 .main-navigation ul li a {
-    text-transform: capitalize;
-    color: #333;
+    font-family: 'Roboto', serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ffffff;
 }
 .main-navigation > ul > li.menu-item-has-children > a:after {
     content: "\f107";
@@ -2053,7 +2056,7 @@ section:after,
 	padding: 100px 0;
 }
 .cloud-background.page-section {
-	padding-top: 130px;
+	padding-top: 20px;
     padding-bottom: 30px;
 }
 .home .cloud-background.page-section {
@@ -3523,14 +3526,16 @@ span.tags-links {
 # Banner and breadcrumb
 --------------------------------------------------------------*/
 #header-image {
-    max-height: 650px;
-    min-height: 225px;
+    max-height: 30em;
+    min-height: 30em;
     overflow: hidden;
-    background-color: #95ecf2;
+    background-color: #ae95f2;
 }
+
 #header-image img {
     width: 100%;
     vertical-align: middle;
+    display: none;
 }
 #header-image.no-banner-image {
     min-height: 500px;
@@ -5279,7 +5284,7 @@ body.error404 .footer-divider {
 	/*-----End column grid widths-----*/
 	/*-------- Primary and Secondary Sidebar-----*/ 
 	#primary {
-		width: 75%;
+		width: 100%;
 		float: left;
 	}
 	#secondary {
@@ -5958,13 +5963,12 @@ body.error404 .footer-divider {
         height: auto; /* Mantiene la proporción de las imágenes */
     }
     .banner-top-header-widgets, .banner-bottom-header-widgets {
-        flex-direction: row;
-        
+        flex-direction: row;   
     }
 
 
 
-    .banner-top-header-widgets {
+    .banner-top-header-widgets, .banner-bottom-header-widgets {
         display:flex;
         flex-direction: row;
         margin: 0;
@@ -5977,13 +5981,21 @@ body.error404 .footer-divider {
     margin-bottom: -7px!important;
 }
 
-.banner-top-header-widgets, .banner-bottom-header-widgets {
+.banner-top-header-widgets {
     position: -webkit-sticky; /* Para compatibilidad con Safari */
     position: sticky;
     top: 0; /* Ajusta este valor según sea necesario */
     z-index: 1000; /* Asegura que los banners se mantengan por encima de otros elementos */
 }
 
+
+
 .banner-top-header-widgets > .widget {
     margin: 0!important;
 }
+
+/* Hide Sidebar - Secondary element */
+/* #secondary {
+    display: none;
+} */
+ 

@@ -11,7 +11,9 @@
  $options = kids_education_get_theme_options(); // get theme options 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
 	<div class="blog-post-wrap">
+		
 		<?php kids_education_get_thumbnail_image(); // get thumbnail image ?>
 		<header class="entry-header">
             <h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
