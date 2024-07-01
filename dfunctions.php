@@ -32,6 +32,72 @@ function daniel_cartelera_cpt_init() {
 add_action('init', 'daniel_cartelera_cpt_init');
 
 
+function daniel_cartelera_customfields_init() {
+    /* Custom Fields for Teatros and Obras Post Types */
+    add_meta_box(
+        $id = 'teatro_meta',
+        $title = 'Información del Teatro',
+        $callback = 'daniel_cartelera_teatro_meta_box',
+        $screen = 'teatros',
+        $context = 'normal',
+        $priority = 'high',
+    
+    );  
+
+    add_meta_box(
+        $id = 'obra_meta',
+        $title = 'Información de la Obra',
+        $callback = 'daniel_cartelera_obra_meta_box',
+        $screen = 'obras',
+        $context = 'normal',
+        $priority = 'high',
+    
+    );
+
+}
+add_action('add_meta_boxes', 'daniel_cartelera_customfields_init');
+
+
+function daniel_cartelera_teatro_meta_box($post) {
+    $direccion = get_post_meta($post->ID, '_direccion', true);
+    echo '<label for="direccion">Dirección:</label>';
+    echo '<input type="text" id="direccion" name="direccion" value="' . esc_attr($direccion) . '" />  ';
+
+    $telefono = get_post_meta($post->ID, '_telefono', true);
+    echo '<label for="telefono">Teléfono:</label>';
+    echo '<input type="text" id="telefono" name="telefono" value="' . esc_attr($telefono) . '" />  ';
+
+    $sitio_web = get_post_meta($post->ID, '_sitio_web', true);
+    echo '<label for="sitio_web">Sitio Web:</label>';
+    echo '<input type="text" id="sitio_web" name="sitio_web" value="' . esc_attr($sitio_web) . '" />  ';
+}
+
+
+function daniel_cartelera_save_metabox($post_id) {
+    if (array_key_exists('direccion', $_POST)) {
+        update_post_meta(
+            $post_id,
+            '_direccion',
+            sanitize_text_field($_POST['direccion'])
+        );
+    }
+    if (array_key_exists('telefono', $_POST)) {
+        update_post_meta(
+            $post_id,
+            '_telefono',
+            sanitize_text_field($_POST['telefono'])
+        );
+    }
+    if (array_key_exists('sitio_web', $_POST)) {
+        update_post_meta(
+            $post_id,
+            '_sitio_web',
+            sanitize_text_field($_POST['sitio_web'])
+        );
+    }
+}
+add_action('save_post', 'daniel_cartelera_save_metabox');
+
 function daniel_cartelera_banners_init(){
 
     // Registro del primer área de widget para el banner arriba del header
@@ -77,8 +143,5 @@ function daniel_cartelera_banners_init(){
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
     ) );
-
-
 }
 add_action( 'widgets_init', 'daniel_cartelera_banners_init' );
-
