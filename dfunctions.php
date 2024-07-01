@@ -39,7 +39,7 @@ function daniel_cartelera_customfields_init() {
         $title = 'Información del Teatro',
         $callback = 'daniel_cartelera_teatro_meta_box',
         $screen = 'teatros',
-        $context = 'normal',
+        $context = 'side',
         $priority = 'high',
     
     );  
@@ -49,15 +49,50 @@ function daniel_cartelera_customfields_init() {
         $title = 'Información de la Obra',
         $callback = 'daniel_cartelera_obra_meta_box',
         $screen = 'obras',
-        $context = 'normal',
+        $context = 'side',
         $priority = 'high',
+    
+    );
+
+    // Relación obra-teatro
+    add_meta_box(
+        $id = 'relacion_obra_teatro',
+        $title = 'Seleccionar Teatro',
+        $callback = 'daniel_cartelera_relacion_obra_teatro',
+        $screen = 'obras',
+        $context = 'side',
+        $priority = 'default',
     
     );
 
 }
 add_action('add_meta_boxes', 'daniel_cartelera_customfields_init');
 
+function daniel_cartelera_relacion_obra_teatro($post) {
+    $teatro_asociado = get_post_meta($post->ID, '_teatro_asociado', true);
+    $teatros = get_posts(array(
+        'post_type' => 'teatros',
+        'numberposts' => -1
+    ));
 
+    echo '<label for="teatro_asociado">Teatro:</label>';
+    echo '<select id="teatro_asociado" name="teatro_asociado">';
+    foreach ($teatros as $teatro) {
+        echo '<option value="' . $teatro->ID . '" ' . selected($teatro_asociado, $teatro->ID, false) . '>' . $teatro->post_title . '</option>';
+    }
+    echo '</select>';
+}
+
+function daniel_carelera_save_relacion_obra_teatro($post_id) {
+    if (array_key_exists('teatro_asociado', $_POST)) {
+        update_post_meta(
+            $post_id,
+            '_teatro_asociado',
+            intval($_POST['teatro_asociado'])
+        );
+    }
+}
+add_action('save_post', 'daniel_carelera_save_relacion_obra_teatro');
 function daniel_cartelera_teatro_meta_box($post) {
     $direccion = get_post_meta($post->ID, '_direccion', true);
     echo '<label for="direccion">Dirección:</label>';
@@ -69,11 +104,28 @@ function daniel_cartelera_teatro_meta_box($post) {
 
     $sitio_web = get_post_meta($post->ID, '_sitio_web', true);
     echo '<label for="sitio_web">Sitio Web:</label>';
-    echo '<input type="text" id="sitio_web" name="sitio_web" value="' . esc_attr($sitio_web) . '" />  ';
+    echo '<input type="text" id="sitio_web" name="sitio_web" value="' . esc_attr($sitio_web) . '" />    ';
+}
+
+function daniel_cartelera_obra_meta_box($post) {
+
+    $en_cartelera = get_post_meta($post->ID, '_en_cartelera', true);
+    echo '<label for="en_cartelera">En Cartelera:</label>';
+    echo '<input type="checkbox" id="en_cartelera" name="en_cartelera" value="1" ' . checked($en_cartelera, 1, false) . ' /><br />';
+
+    $horario = get_post_meta($post->ID, '_horario', true);
+    echo '<label for="horario">Horario:</label>';
+    echo '<input type="text" id="horario" name="horario" value="' . esc_attr($horario) . '" />  ';
+
+    $precio = get_post_meta($post->ID, '_precio', true);
+    echo '<label for="precio">Precio:</label>';
+    echo '<input type="text" id="precio" name="precio" value="' . esc_attr($precio) . '" />  ';
 }
 
 
 function daniel_cartelera_save_metabox($post_id) {
+
+    // Teatro Meta
     if (array_key_exists('direccion', $_POST)) {
         update_post_meta(
             $post_id,
@@ -93,6 +145,35 @@ function daniel_cartelera_save_metabox($post_id) {
             $post_id,
             '_sitio_web',
             sanitize_text_field($_POST['sitio_web'])
+        );
+    }
+
+    // Obra Meta
+    if (array_key_exists('en_cartelera', $_POST)) {
+        update_post_meta(
+            $post_id,
+            '_en_cartelera',
+            1
+        );
+    } else {
+        update_post_meta(
+            $post_id,
+            '_en_cartelera',
+            0
+        );
+    }
+    if (array_key_exists('horario', $_POST)) {
+        update_post_meta(
+            $post_id,
+            '_horario',
+            sanitize_text_field($_POST['horario'])
+        );
+    }
+    if (array_key_exists('precio', $_POST)) {
+        update_post_meta(
+            $post_id,
+            '_precio',
+            sanitize_text_field($_POST['precio'])
         );
     }
 }
