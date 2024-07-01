@@ -5998,4 +5998,67 @@ body.error404 .footer-divider {
 /* #secondary {
     display: none;
 } */
+
+.dc-blog-post-wrap {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row; /* Alineación horizontal por defecto */
+}
+
+/* Media query para pantallas menores de 768px */
+@media (max-width: 768px) {
+    .dc-blog-post-wrap {
+        margin: 0;
+        flex-direction: column; /* Cambia la dirección a vertical en pantallas pequeñas */
+    }
+    .dc-post-content {
+        flex: 2;
+        margin: 1em;
+    }
+}
+
+.dc-post-thumbnail {
+    flex: 1;
+}
+
+.dc-post-content {
+    flex: 2;
+    margin: 0;
+    padding: 0 1em;
+}
+
+
+
+.dc-post-content > div,
+.dc-post-thumbnail > div {
+    background-color: #70CEE5!important;
+    padding: 20px!important;
+    margin: 1em!important;
+    border-radius: 50px!important;
+}
+
+.dc-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.dc-card {
+    width: calc(33.333% - 20px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.dc-card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.dc-card-body {
+    padding: 5px;
+}
+
+.dc-card-title {
+    margin: 0;
+    font-size: 1.50rem;
+}
  
