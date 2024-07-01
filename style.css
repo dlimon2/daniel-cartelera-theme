@@ -699,7 +699,7 @@ a:focus {
     position: absolute;
     left: 0;
     right: 0;
-    z-index: 3000;
+    z-index: 2000;
     background: #2f5fff!important;
     /*background-image: url(assets/uploads/header-bg-blue.png);
     background-size: cover;
@@ -710,10 +710,10 @@ a:focus {
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;*/
 }
-#masthead.fixed-header.is-sticky {
+/* #masthead.fixed-header.is-sticky {
     position: fixed;
     background-color: transparent;
-}
+} */
 .header-logo img {
     padding: 45px 30px;
 }
@@ -5985,7 +5985,7 @@ body.error404 .footer-divider {
     position: -webkit-sticky; /* Para compatibilidad con Safari */
     position: sticky;
     top: 0; /* Ajusta este valor según sea necesario */
-    z-index: 1000; /* Asegura que los banners se mantengan por encima de otros elementos */
+    z-index: 3000; /* Asegura que los banners se mantengan por encima de otros elementos */
 }
 
 

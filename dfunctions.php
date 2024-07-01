@@ -1,6 +1,37 @@
 <?php
 /* Daniel Cartelera 2 functions and definitions */
 
+function daniel_cartelera_cpt_init() {
+    /* Custom Post Types: Teatros y Obras */
+
+    //Teatros
+    $teatros_args = array(
+        'label' => 'Teatros',
+        'public' => true,
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'teatros'),
+        'menu_icon' => 'dashicons-art',
+        'menu_position' => 0,
+        'show_in_rest' => true);
+
+    register_post_type('teatros', $teatros_args);
+
+    $obras_args = array(
+        'label' => 'Obras',
+        'public' => true,
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'obras'),
+        'menu_icon' => 'dashicons-tickets-alt',
+        'menu_position' => 0,
+        'show_in_rest' => true);
+    
+    register_post_type('obras', $obras_args);
+}
+add_action('init', 'daniel_cartelera_cpt_init');
+
+
 function daniel_cartelera_banners_init(){
 
     // Registro del primer área de widget para el banner arriba del header
@@ -49,23 +80,5 @@ function daniel_cartelera_banners_init(){
 
 
 }
-
 add_action( 'widgets_init', 'daniel_cartelera_banners_init' );
 
-
-function custom_header_image() {
-    if (is_page()) { // Verifica si estamos en una página
-        $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); // Obtiene la URL de la imagen destacada de la página actual
-
-        if ($featured_img_url) { // Si hay una imagen destacada
-            // Define la imagen de cabecera con la imagen destacada
-            return $featured_img_url;
-        }
-    }
-
-    // Retorna la imagen de cabecera predeterminada si no estamos en una página o si no hay imagen destacada
-    return get_header_image();
-}
-
-// Filtra la URL de la imagen de cabecera para usar la imagen destacada de la página si está disponible
-add_filter('theme_mod_header_image', 'custom_header_image');
