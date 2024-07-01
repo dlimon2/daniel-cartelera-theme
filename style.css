@@ -740,14 +740,16 @@ a:focus {
 	width: 60%;
 }
 .site-branding {
+    
+    /*
     width: 40%;
     background-image: url(assets/uploads/logo-bg.png);
     background-size: cover;
-    background-position: 50% 95%;
-    padding: 0 0 35px 0;
+    background-position: 50% 95%;*/
+    margin: 1em;
+    padding: 0!important;
     text-align: center;
     position: relative;
-    top: 0px;
     min-height: 200px;
 }
 .is-sticky .site-branding {
@@ -3526,8 +3528,9 @@ span.tags-links {
 # Banner and breadcrumb
 --------------------------------------------------------------*/
 #header-image {
-    max-height: 30em;
-    min-height: 30em;
+    height: 20em;
+    /* max-height: 30em;
+    min-height: 30em; */
     overflow: hidden;
     background-color: #ae95f2;
 }
@@ -3557,8 +3560,10 @@ span.tags-links {
     bottom: 0;
     color: #fff;
     text-align: center;
-    height: 100px;
-    margin: auto;
+    height: 5em;
+    margin-top: 8rem;
+    margin-bottom: 0rem;
+    /* margin: auto; */
     left: 0;
     right: 0;
     text-transform: capitalize;
@@ -5536,9 +5541,9 @@ body.error404 .footer-divider {
 
     .site-branding {
         width: 100%;
-        background-image: url(assets/uploads/logo-bg.png);
+        /*background-image: url(assets/uploads/logo-bg.png);
         background-size: cover;
-        background-position: 50% 95%;
+        background-position: 50% 95%; */
         padding: 0 0 35px 0;
         text-align: center;
         position: relative;
@@ -5570,8 +5575,8 @@ body.error404 .footer-divider {
 	    margin-bottom: 1em;
 	}
 	#header-image.no-banner-image {
-	    min-height: 350px;
-	    max-height: 350px;
+	    min-height: 10em;
+	    max-height: 10em;
 	}
 	.search-wrapper {
 	    padding: 45px 60px 60px 50px;
