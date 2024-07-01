@@ -903,13 +903,13 @@ a:focus {
 }
 .site-logo {
     width: 12em;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 .is-sticky .site-logo {
     width: 12em;
 }
 .is-sticky .site-branding {
-    padding: 0 0 65px 0;
+    padding: 0;
 }
 .site-header.translate-header.is-sticky {
     -webkit-transform: translateY(0);
@@ -1138,18 +1138,18 @@ body.sidr-open {
 }
 .menu-button,
 #sidr-right-top-button {
-    position: fixed;
-    top: 7px;
-    left: 5px;
+    position: absolute;
+    top: 1.5em;
+    margin-right: 2em;
     background-color: #00C6E1;
-    width: 35px;
+    width: 45px;
     height: 35px;
     text-align: center;
     line-height: 35px;
     color: #fff;
     font-size: 25px;
     border-radius: 5px;
-    z-index: 3000;
+    z-index: 2500;
 }
 #sidr-right-top-button {
 	left: auto;
@@ -3538,7 +3538,6 @@ span.tags-links {
 #header-image img {
     width: 100%;
     vertical-align: middle;
-    display: none;
 }
 #header-image.no-banner-image {
     min-height: 500px;
