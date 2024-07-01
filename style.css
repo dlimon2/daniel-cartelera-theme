@@ -6017,7 +6017,15 @@ body.error404 .footer-divider {
     }
     .dc-post-content {
         flex: 2;
-        margin: 1em;
+        margin: 0;
+        padding: 0!important;
+    }
+    .dc-post-content > div,
+    .dc-post-thumbnail > div {
+        background-color: #70CEE5!important;
+        padding: 20px!important;
+        margin-bottom: 1em;
+        border-radius: 50px!important;
     }
 }
 
@@ -6037,7 +6045,7 @@ body.error404 .footer-divider {
 .dc-post-thumbnail > div {
     background-color: #70CEE5!important;
     padding: 20px!important;
-    margin: 1em!important;
+    /* margin: 1em!important; */
     border-radius: 50px!important;
 }
 
