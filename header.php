@@ -67,6 +67,7 @@ echo '</div>';
 	do_action( 'kids_education_header_action' );
 
 
+
 	/**
 	 * kids_education_content_start_action hook
 	 *

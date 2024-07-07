@@ -93,6 +93,7 @@ function daniel_carelera_save_relacion_obra_teatro($post_id) {
     }
 }
 add_action('save_post', 'daniel_carelera_save_relacion_obra_teatro');
+
 function daniel_cartelera_teatro_meta_box($post) {
     $direccion = get_post_meta($post->ID, '_direccion', true);
     echo '<label for="direccion">Dirección:</label>';
@@ -121,7 +122,6 @@ function daniel_cartelera_obra_meta_box($post) {
     echo '<label for="precio">Precio:</label>';
     echo '<input type="text" id="precio" name="precio" value="' . esc_attr($precio) . '" />  ';
 }
-
 
 function daniel_cartelera_save_metabox($post_id) {
 
