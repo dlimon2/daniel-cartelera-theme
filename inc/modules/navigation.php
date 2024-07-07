@@ -70,8 +70,26 @@ if ( ! function_exists( 'kids_education_navigation' ) ) :
         			endif;
         		?>
 
+
 			</div><!-- .container -->
+
+			<?php
+					// Banner Abajo del Header
+				echo '<div class="banner-bottom-header-widgets">';
+				if ( is_active_sidebar( 'banner-bottom-header-1' ) ) {
+					dynamic_sidebar( 'banner-bottom-header-1' );
+				}
+				if ( is_active_sidebar( 'banner-bottom-header-2' ) ) {
+					dynamic_sidebar( 'banner-bottom-header-2' );
+				}
+				echo '</div>';
+				?>
+					
+
+
 		</header><!--.site-header-->
+
+
 
 		<!-- Left Mobile Menu -->
 	    <nav id="sidr-left-top" class="mobile-menu sidr left">

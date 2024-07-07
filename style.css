@@ -3528,7 +3528,7 @@ span.tags-links {
 # Banner and breadcrumb
 --------------------------------------------------------------*/
 #header-image {
-    height: 20em;
+    height: 27em;
     /* max-height: 30em;
     min-height: 30em; */
     overflow: hidden;
@@ -5947,6 +5947,7 @@ body.error404 .footer-divider {
 
 /* Daniel's custom CSS */
 /* Estilo por defecto para móviles: banners uno encima del otro */
+
 .banner-top-header-widgets, .banner-bottom-header-widgets {
     display: flex;
     flex-direction: column;
@@ -5956,8 +5957,23 @@ body.error404 .footer-divider {
     
 }
 
+.banner-bottom-header-widgets > section {
+    margin: 0!important;
+}
+
+
 /* Estilo para escritorio: banners uno al lado del otro */
 @media (min-width: 768px) { /* Ajusta este valor según tus necesidades */
+
+    #primary {
+        margin-top: 5em;
+    }
+
+    .entry-header {
+        margin-top: 7em;
+    }
+
+
     .banner-top-header-widgets > *, .banner-bottom-header-widgets > * {
         flex: 0 1 50%; /* Hace que cada elemento hijo ocupe el 50% del ancho */
         box-sizing: border-box; /* Asegura que el padding y border estén incluidos en el ancho */
@@ -6009,8 +6025,28 @@ body.error404 .footer-divider {
     flex-direction: row; /* Alineación horizontal por defecto */
 }
 
+.blog-post-wrap > .entry-header {
+    margin-top: 0;
+}
+
 /* Media query para pantallas menores de 768px */
 @media (max-width: 768px) {
+
+    #header-image {
+        position: relative; /* Hace que la sección sea un contenedor de posición relativa */    
+    }
+    
+    #header-image > img {
+        position: absolute; /* Posiciona la imagen absolutamente dentro de la sección */
+        bottom: 0; /* Alinea la imagen en la parte inferior de la sección */
+        width: 100%; /* Opcional: Ajusta la imagen para que ocupe todo el ancho de la sección */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+
+    .entry-header {
+        margin-top: 7.5em;
+    }
+
     .dc-blog-post-wrap {
         margin: 0;
         flex-direction: column; /* Cambia la dirección a vertical en pantallas pequeñas */

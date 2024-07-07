@@ -12,17 +12,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php
-	// Banner Abajo del Header
-	echo '<div class="banner-bottom-header-widgets">';
-	if ( is_active_sidebar( 'banner-bottom-header-1' ) ) {
-		dynamic_sidebar( 'banner-bottom-header-1' );
-	}
-	if ( is_active_sidebar( 'banner-bottom-header-2' ) ) {
-		dynamic_sidebar( 'banner-bottom-header-2' );
-	}
-	echo '</div>';
-	?>
+
 	<div class="blog-post-wrap">
 		<?php //kids_education_get_thumbnail_image(); // get thumbnail images 
 
