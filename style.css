@@ -6048,9 +6048,15 @@ body.error404 .footer-divider {
     }
 
     .dc-blog-post-wrap {
+        display: flex;
         margin: 0;
         flex-direction: column; /* Cambia la dirección a vertical en pantallas pequeñas */
     }
+
+    .dc-post-thumbnail {
+        order: -1;
+    }
+
     .dc-post-content {
         flex: 2;
         margin: 0;
