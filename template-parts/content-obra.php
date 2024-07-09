@@ -86,15 +86,31 @@
 			<?php //kids_education_get_thumbnail_image(); // get thumbnail images ?>
 			<?php
 			if ( 'obras' === get_post_type() ) :
-				
+
+				$teatro_asociado_id = get_post_meta( get_the_ID(), '_teatro_asociado', true );
+
+				if (!empty($teatro_asociado_id)) {
+					$teatro_post = get_post($teatro_asociado_id);
+					if ($teatro_post !== null) {
+						$nombre_del_teatro = $teatro_post->post_title;
+					} else {
+						$nombre_del_teatro = 'Teatro no encontrado';
+					}
+				} else {
+					$nombre_del_teatro = 'ID de teatro no proporcionado';
+				}
 				$horario = get_post_meta( get_the_ID(), '_horario', true );
 				$precio = get_post_meta( get_the_ID(), '_precio', true );
 				$en_cartelera = get_post_meta( get_the_ID(), '_en_cartelera', true );?>
 
 				<div class="obra-meta">
 					<?php kids_education_get_thumbnail_image(); ?>
+
+					<?php if (!empty($teatro_asociado_id)) : ?>
+						<p class="obra-teatro-asociado"><strong>🎭 Teatro:</strong> <?php echo esc_html( $nombre_del_teatro ); ?></p>
+					<?php endif; ?>
 					<?php if (!empty($en_cartelera) && $en_cartelera) : ?>
-							<p class="teatro-sitio-web"><strong>🎭 En Cartelera</strong> </p>
+							<p class="teatro-sitio-web"><strong>✅ En Cartelera</strong> </p>
 					<?php endif; ?>
 					<?php if (!empty($horario)) : ?>
 						<p class="obra-horario"><strong>⌚ Horario:</strong> <?php echo esc_html( $horario ); ?></p>

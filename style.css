@@ -849,7 +849,7 @@ a:focus {
 #masthead .right-menu ul > li:nth-child(1n):hover > a,
 #masthead .right-menu ul > li:nth-child(1n):focus > a,
 #masthead .right-menu ul > li:nth-child(1n) > a:before {
-   color: #5433B4 ;
+   color: #FDD41A ;
 }
 #masthead .right-menu li.current-menu-item:nth-child(2n) > a,
 #masthead .right-menu li.current-menu-item:nth-child(2n) > a:before,
@@ -873,7 +873,7 @@ a:focus {
 #masthead .right-menu ul > li:nth-child(4n):hover > a,
 #masthead .right-menu ul > li:nth-child(4n):focus > a,
 #masthead .right-menu ul > li:nth-child(4n) > a:before {
-   color: #66993E ;
+   color: #FDD41A ;
 }
 #masthead .sub-menu li:hover a {
 	color: #333 !important;
@@ -989,7 +989,7 @@ ul.sub-menu li {
 	color: #FF9C00;
 }
 .nav-menu li:nth-child(6n) .fa {
-	color: #5433B4;
+	color: #FDD41A;
 }
 .nav-menu li:nth-child(7n) .fa {
 	color: #FDD41A;
@@ -5966,11 +5966,11 @@ body.error404 .footer-divider {
 @media (min-width: 768px) { /* Ajusta este valor según tus necesidades */
 
     #primary {
-        margin-top: 5em;
+        margin-top: 8em;
     }
 
     .entry-header {
-        margin-top: 7em;
+        margin-top: 9em;
     }
 
 
