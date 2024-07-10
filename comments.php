@@ -52,12 +52,12 @@ if ( post_password_required() ) {
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
 			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'kids-education' ); ?></h2>
-			<div class="nav-links">
-
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'kids-education' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'kids-education' ) ); ?></div>
-
-			</div><!-- .nav-links -->
+			<?php if ( !in_array( get_post_type(), array( 'teatros', 'obras' ) ) ) : ?>
+				<div class="nav-links">
+					<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'kids-education' ) ); ?></div>
+					<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'kids-education' ) ); ?></div>
+				</div><!-- .nav-links -->
+			<?php endif; ?>
 		</nav><!-- #comment-nav-above -->
 		<?php endif; // Check for comment navigation. ?>
 
@@ -73,12 +73,12 @@ if ( post_password_required() ) {
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
 			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'kids-education' ); ?></h2>
-			<div class="nav-links">
-
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'kids-education' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'kids-education' ) ); ?></div>
-
-			</div><!-- .nav-links -->
+			<?php if ( !in_array( get_post_type(), array( 'teatros', 'obras' ) ) ) : ?>
+				<div class="nav-links">
+					<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'kids-education' ) ); ?></div>
+					<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'kids-education' ) ); ?></div>
+				</div><!-- .nav-links -->
+			<?php endif; ?>
 		</nav><!-- #comment-nav-below -->
 		<?php
 		endif; // Check for comment navigation.

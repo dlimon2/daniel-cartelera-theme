@@ -35,9 +35,9 @@
 			<?php endif; ?>
 		</div>
 		<div class="dc-post-content">
-			<header class="entry-header">
+			<!-- <header class="entry-header">
 
-			</header><!-- .entry-header -->
+			</header>.entry-header -->
 
 			<div class="entry-content">
 				<?php

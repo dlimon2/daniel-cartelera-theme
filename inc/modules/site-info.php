@@ -26,8 +26,6 @@ if ( ! function_exists( 'kids_education_footer_section' ) ) :
             </div><!-- .container -->
         <?php endif; ?>
 
-            <div class="spacer"></div>
-
             <div class="bottom-footer two-columns">
                 <div class="container">
                     <?php if( has_nav_menu( 'footer-menu' ) ):

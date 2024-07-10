@@ -190,19 +190,4 @@ if ( ! function_exists( 'kids_education_page_section_end' ) ) :
 endif;
 add_action( 'kids_education_page_section_end', 'kids_education_page_section_end', 10 );
 
-if ( ! function_exists( 'kids_education_get_footer_divider' ) ) :
-	/**
-	 * Div content for footer divider
-	 *
-	 * @since Kids Education 0.1
-	 *
-	 */
-	function kids_education_get_footer_divider() {
-		?>
-		<div class="footer-divider">
-      		<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/uploads/footer-divider.png" alt="<?php esc_attr_e( 'footer divider', 'kids-education' ); ?>">
-    	</div>
-		<?php
-	}
-endif;
-add_action( 'kids_education_footer_divider', 'kids_education_get_footer_divider', 10 );
+
