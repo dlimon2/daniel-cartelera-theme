@@ -3527,13 +3527,7 @@ span.tags-links {
 /*--------------------------------------------------------------
 # Banner and breadcrumb
 --------------------------------------------------------------*/
-#header-image {
-    height: 27em;
-    /* max-height: 30em;
-    min-height: 30em; */
-    overflow: hidden;
-    background-color: #ae95f2;
-}
+
 
 #header-image img {
     width: 100%;
@@ -4317,7 +4311,9 @@ article .entry-content {
     padding-left: 20px;
 }
 article .entry-content a {
-    color: #FDD41A;
+    color: #000000;
+    text-decoration: underline;
+    
 }
 article .entry-content p a:hover {
     color: #00ADE3;
@@ -5169,7 +5165,7 @@ li .wide {
 	background-image: url("assets/uploads/footer-bg.png");
 }
 .site-footer .container {
-	padding-top: 125px;
+	padding-top: 10;
 }
 .site-footer ul {
     list-style: none;
@@ -5496,7 +5492,7 @@ body.error404 .footer-divider {
 	    width: 65%;
 	}
 	.bottom-footer {
-	    background-color: #E7E09A;
+	    background-color: #ffffff;
 	}
 	.site-info.text-right {
 	    text-align: center;
@@ -5964,13 +5960,20 @@ body.error404 .footer-divider {
 
 /* Estilo para escritorio: banners uno al lado del otro */
 @media (min-width: 768px) { /* Ajusta este valor según tus necesidades */
+    #header-image {
+        height: 35em;
+        /* max-height: 30em;
+        min-height: 30em; */
+        overflow: hidden;
+        background-color: #ae95f2;
+    }
 
     #primary {
         margin-top: 8em;
     }
 
     .entry-header {
-        margin-top: 9em;
+        margin-top: 11em;
     }
 
 
@@ -6031,6 +6034,23 @@ body.error404 .footer-divider {
 
 /* Media query para pantallas menores de 768px */
 @media (max-width: 768px) {
+    .dc-cards-wrapper {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .dc-cards-wrapper > * {
+        flex: 0 1 100%; /* Ajusta este valor según necesites para mostrar dos elementos por fila */
+    }
+
+
+    #header-image {
+        height: 26em;
+        /* max-height: 30em;
+        min-height: 30em; */
+        overflow: hidden;
+        background-color: #ae95f2;
+    }
 
     #header-image {
         position: relative; /* Hace que la sección sea un contenedor de posición relativa */    
@@ -6038,13 +6058,13 @@ body.error404 .footer-divider {
     
     #header-image > img {
         position: absolute; /* Posiciona la imagen absolutamente dentro de la sección */
-        bottom: 0; /* Alinea la imagen en la parte inferior de la sección */
+        bottom: 4em; /* Alinea la imagen en la parte inferior de la sección */
         width: 100%; /* Opcional: Ajusta la imagen para que ocupe todo el ancho de la sección */
         height: auto; /* Mantiene la proporción de la imagen */
     }
 
     .entry-header {
-        margin-top: 7.5em;
+        margin-top: 7em;
     }
 
     .dc-blog-post-wrap {

@@ -32,7 +32,7 @@ do_action( 'kids_education_page_section' ); ?>
 		 *  
 		 * @hooked kids_education_post_pagination 
 		 */
-		do_action( 'kids_education_action_post_pagination' );
+		//do_action( 'kids_education_action_post_pagination' );
 
 		/**
 		 * Hook kids_education_related_posts
