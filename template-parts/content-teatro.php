@@ -73,7 +73,7 @@
 						echo '<div class="dc-cards-wrapper">'; // Contenedor para las tarjetas
 						foreach ($obras_relacionadas as $obra) {
 							echo '<div class="dc-card">';
-							echo '<img src="' . get_the_post_thumbnail_url($obra->ID) . '" alt="' . get_the_title($obra->ID) . '" class="card-img-top">'; // Imagen de la obra
+							echo '<a href="' . get_permalink($obra->ID) . '"><img src="' . get_the_post_thumbnail_url($obra->ID) . '" alt="' . get_the_title($obra->ID) . '" class="card-img-top"></a>'; // Imagen de la obra
 							echo '<div class="dc-card-body">';
 							echo '<h5 class="dc-card-title"><a href="' . get_permalink($obra->ID) . '">' . get_the_title($obra->ID) . '</a></h5>';
 							// Aquí puedes añadir más información de la obra como fecha, lugar, etc.
