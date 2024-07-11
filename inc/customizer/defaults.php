@@ -90,7 +90,7 @@ function kids_education_get_content() {
 
 	$kids_education_content['left'] 	= sprintf( _x( 'Copyright &copy; %1$s %2$s.', '1: Year, 2: Site Title with home URL', 'kids-education' ), date_i18n( 'Y', strtotime( date( 'Y' ) ) ), '<a href="'. esc_url( home_url( '/' ) ) .'">'. esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>' );
 
-	$kids_education_content['right']	= esc_attr( $theme_data->get( 'Name') ) . '&nbsp;' . esc_html__( 'by', 'kids-education' ). '&nbsp;<a target="_blank" href="'. esc_url( $theme_data->get( 'AuthorURI' ) ) .'">'. esc_attr( $theme_data->get( 'Author' ) ) .'</a>';
+	$kids_education_content['right']	= 'Desarrollo: <a href="https://www.dlimon.net" target="_blank" style="text-decoration: underline;">💎Daniel Limón</a>';
 
 	return apply_filters( 'kids_education_get_content', $kids_education_content );
 }

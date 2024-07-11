@@ -559,8 +559,9 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #00C6E1;
+	color: #d90000;
 	text-decoration: none;
+    font-weight: 600;
 }
 
 a:hover,
@@ -1109,7 +1110,7 @@ ul.sub-menu li {
 }
 .sidr ul li a, 
 .sidr ul li span {
-	color: #fff;
+	color: #000000;
 }
 .sidr ul li:hover,
 .sidr ul li:focus {
@@ -2130,7 +2131,7 @@ article .entry-header,
     text-align: center;
     position: fixed;
     bottom: -100px;
-    right: 25px;
+    left: 25px;
     opacity: 1;
     cursor: pointer;
     -webkit-transition: all .7s ease-in-out;
@@ -3270,7 +3271,7 @@ article .gallery img {
     border-radius: 50px; 
 }
 .entry-meta a {
-    color: #fff;
+    color: #c40202;
 }
 .blog-wrapper {
     display: inline-block;
@@ -4301,7 +4302,7 @@ article .entry-title a,
 article .entry-title,
 .entry-meta, 
 article .entry-content {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .post-edit-link {
@@ -6088,6 +6089,13 @@ body.error404 .footer-divider {
         padding: 20px!important;
         margin-bottom: 1em;
         border-radius: 50px!important;
+    }
+
+    .home .cloud-background.page-section {
+        background-image: url("assets/uploads/white-bg.png");
+        background-size: contain;
+        margin-top: -0.5em;
+        position: relative; 
     }
 }
 

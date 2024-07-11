@@ -93,11 +93,13 @@
 					$teatro_post = get_post($teatro_asociado_id);
 					if ($teatro_post !== null) {
 						$nombre_del_teatro = $teatro_post->post_title;
+						$enlace_del_teatro = get_permalink($teatro_asociado_id);
 					} else {
 						$nombre_del_teatro = 'Teatro no encontrado';
 					}
 				} else {
 					$nombre_del_teatro = 'ID de teatro no proporcionado';
+					$enlace_del_teatro = '';
 				}
 				$horario = get_post_meta( get_the_ID(), '_horario', true );
 				$precio = get_post_meta( get_the_ID(), '_precio', true );
@@ -107,7 +109,7 @@
 					<?php kids_education_get_thumbnail_image(); ?>
 
 					<?php if (!empty($teatro_asociado_id)) : ?>
-						<p class="obra-teatro-asociado"><strong>🎭 Teatro:</strong> <?php echo esc_html( $nombre_del_teatro ); ?></p>
+						<p class="obra-teatro-asociado"><strong>🎭 Teatro:</strong> <a href="<?php echo esc_url( $enlace_del_teatro ); ?>"><?php echo esc_html( $nombre_del_teatro ); ?></a></p>
 					<?php endif; ?>
 					<?php if (!empty($en_cartelera) && $en_cartelera) : ?>
 							<p class="teatro-sitio-web"><strong>✅ En Cartelera</strong> </p>
