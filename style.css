@@ -6035,6 +6035,12 @@ body.error404 .footer-divider {
 
 /* Media query para pantallas menores de 768px */
 @media (max-width: 768px) {
+    .sidr-class-site-logo,
+    #sidr-id-mobile-site-header,
+    .sidr-class-site-description {
+        display: none!important;
+    }
+
     .dc-cards-wrapper {
         flex-wrap: wrap;
         justify-content: space-around;
