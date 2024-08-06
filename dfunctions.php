@@ -17,8 +17,39 @@ function daniel_cartelera_cpt_init() {
 
     register_post_type('teatros', $teatros_args);
 
+    $obras_taxonomy_labels = array(
+        'name' => _x('Obras', 'Post Type General Name', 'textdomain'),
+        'singular_name' => _x('Obra', 'Post Type Singular Name', 'textdomain'),
+        'menu_name' => __('Obras', 'textdomain'),
+        'name_admin_bar' => __('Obra', 'textdomain'),
+        'archives' => __('Archivo de Obras', 'textdomain'),
+        'attributes' => __('Atributos de Obras', 'textdomain'),
+        'parent_item_colon' => __('Obra Padre:', 'textdomain'),
+        'all_items' => __('Todas las Obras', 'textdomain'),
+        'add_new_item' => __('Añadir Nueva Obra', 'textdomain'),
+        'add_new' => __('Añadir Nueva', 'textdomain'),
+        'new_item' => __('Nueva Obra', 'textdomain'),
+        'edit_item' => __('Editar Obra', 'textdomain'),
+        'update_item' => __('Actualizar Obra', 'textdomain'),
+        'view_item' => __('Ver Obra', 'textdomain'),
+        'view_items' => __('Ver Obras', 'textdomain'),
+        'search_items' => __('Buscar Obra', 'textdomain'),
+        'not_found' => __('No encontrado', 'textdomain'),
+        'not_found_in_trash' => __('No encontrado en la papelera', 'textdomain'),
+        'featured_image' => __('Imagen destacada', 'textdomain'),
+        'set_featured_image' => __('Establecer imagen destacada', 'textdomain'),
+        'remove_featured_image' => __('Eliminar imagen destacada', 'textdomain'),
+        'use_featured_image' => __('Usar como imagen destacada', 'textdomain'),
+        'insert_into_item' => __('Insertar en la obra', 'textdomain'),
+        'uploaded_to_this_item' => __('Subido a esta obra', 'textdomain'),
+        'items_list' => __('Lista de obras', 'textdomain'),
+        'items_list_navigation' => __('Navegación de lista de obras', 'textdomain'),
+        'filter_items_list' => __('Filtrar lista de obras', 'textdomain'),
+    );
+
     $obras_args = array(
-        'label' => 'Obras',
+        'label' => 'Obra',
+        'labels' => $obras_taxonomy_labels,
         'public' => true,
         'supports' => array('title', 'editor', 'thumbnail'),
         'has_archive' => true,
@@ -30,6 +61,11 @@ function daniel_cartelera_cpt_init() {
     register_post_type('obras', $obras_args);
 }
 add_action('init', 'daniel_cartelera_cpt_init');
+
+function obras_cpt_taxonimy_init() {
+    register_taxonomy_for_object_type('category', 'obras');
+}
+add_action('init', 'obras_cpt_taxonimy_init');  
 
 
 function daniel_cartelera_customfields_init() {

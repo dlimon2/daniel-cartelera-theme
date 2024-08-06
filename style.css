@@ -2121,10 +2121,12 @@ article .entry-header,
 .color-yellow {
     color: #FFEC00;
 }
+
+
 .backtotop {
-    background-color: #00ADE3;
+    background-color: #000000!important;
     z-index: 300;
-    width: 40px;
+    width: 100px;
     height: 40px;
     line-height: 38px;
     font-size: 18px;
@@ -6118,7 +6120,8 @@ body.error404 .footer-divider {
 
 
 .dc-post-content > div,
-.dc-post-thumbnail > div {
+.dc-post-thumbnail > div,
+.dc-blog-post-wrap > section {
     background-color: #70CEE5!important;
     padding: 20px!important;
     /* margin: 1em!important; */
@@ -6132,7 +6135,7 @@ body.error404 .footer-divider {
 }
 
 .dc-card {
-    width: calc(33.333% - 20px);
+    width: calc(25% - 20px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 

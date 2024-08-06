@@ -56,7 +56,7 @@ if ( ! function_exists( 'kids_education_footer_section' ) ) :
                 </div><!-- .container -->
             </div><!-- .bottom-footer -->
         </footer><!-- .site-footer -->
-        <div class="backtotop"><i class="fa fa-angle-up"></i></div><!--end .backtotop-->
+        <div class="backtotop"><i class="fa fa-angle-up">Volver al inicio</i></div><!--end .backtotop-->
     <?php }
 endif;
 add_action( 'kids_education_footer_content', 'kids_education_footer_section', 10 );

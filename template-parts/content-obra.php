@@ -79,8 +79,11 @@
 			?>
 			<footer class="entry-footer">
 				<?php kids_education_entry_footer(); ?>
+
 			</footer><!-- .entry-footer -->
 		</div>
+
+		
 
 		<div class="dc-post-thumbnail">
 			<?php //kids_education_get_thumbnail_image(); // get thumbnail images ?>
@@ -126,3 +129,45 @@
 		</div>
 	</div><!-- .blog-post-wrap -->
 </article><!-- #post-## -->
+
+				<!-- Obras Destacadas -->
+				<?php
+				// Consulta las publicaciones de la categoría "obras-destacadas" del CPT "Obras"
+				$args = array(
+					'post_type' => 'obras',
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'category',
+							'field'    => 'slug',
+							'terms'    => 'obras-destacadas',
+						),
+					),
+					'posts_per_page' => -1, // Obtener todas las publicaciones
+				);
+
+				$obras_destacadas = new WP_Query($args);
+
+				if ($obras_destacadas->have_posts()) : ?>
+				<div class="dc-blog-post-wrap">
+				<section class="obras-destacadas">
+						<h2>Obras Destacadas</h2>
+						<div class="dc-cards-wrapper">
+							<?php while ($obras_destacadas->have_posts()) : $obras_destacadas->the_post(); ?>
+								<div class="dc-card">
+									<?php if (has_post_thumbnail()) : ?>
+										<div class=".dc-card-img-top">
+											<?php the_post_thumbnail('medium'); ?>
+										</div>
+									<?php endif; ?>
+									<div class="dc-card-body">
+										<h3 class="dc-card-title"><?php the_title(); ?></h3>
+										<a href="<?php the_permalink(); ?>" class="card-link">Ver obra</a>
+									</div>
+								</div>
+							<?php endwhile; ?>
+						</div>
+					</section>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
+				</div>
+					
