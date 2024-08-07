@@ -156,7 +156,7 @@
 								<div class="dc-card">
 									<?php if (has_post_thumbnail()) : ?>
 										<div class=".dc-card-img-top">
-											<?php the_post_thumbnail('medium'); ?>
+											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
 										</div>
 									<?php endif; ?>
 									<div class="dc-card-body">
